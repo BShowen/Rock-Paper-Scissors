@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Papers Scissors</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <script>
+            
+    
+            let userChoice = prompt('Rock, Paper or Scissors?') ;
+            
+
+
+
+            //All functions placed below this comment for easy reading. 
+
+            //This is the function that needs to be executed to calculate the winner. 
+            gamePlay(userChoice,computerPlay() );
+            
+            //This function is the game logic. 
+            function gamePlay ( humanChoice , compChoice ){
+                if ( humanChoice === compChoice){ alert('Tie, play again!') }
+
+                switch( humanChoice.toLowerCase() ) {
+                    case 'rock':
+                        if (compChoice == 'paper'){
+                            alert('You lose this round!');
+                        }else if (compChoice == 'scissors'){
+                            alert('You win this round!');
+                        }
+                        break;
+
+                    case 'paper':
+                        if (compChoice == 'rock'){
+                            alert('You win this round!');
+                        }else if(compChoice == 'scissors'){
+                            alert('You lose this round!');
+                        }
+                        break;
+
+                    case 'scissors':
+                        if (compChoice == 'paper'){
+                            alert('You win this round!');
+                        }else if(compChoice == 'rock'){
+                            alert('You lose this round!');
+                        }
+                        break;
+                } 
+            }
+
+            //This is the computers play.
+            function computerPlay(){
+                let x = Math.random();
+
+                if (x<0.33){
+                    return 'rock';
+                }else if(x < 0.66){
+                    return 'paper';
+                }else{
+                    return 'scissors';
+                }
+            }
+            
+        </script>
+    </body>
+</html>
