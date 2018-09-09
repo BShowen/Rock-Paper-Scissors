@@ -7,9 +7,12 @@
     <body>
         <script>
             
+
     
             let userChoice = prompt('Rock, Paper or Scissors?') ;
-            
+            let playerScore = 0;
+            let computerScore = 0;
+
 
 
 
@@ -25,25 +28,31 @@
                 switch( humanChoice.toLowerCase() ) {
                     case 'rock':
                         if (compChoice == 'paper'){
-                            alert('You lose this round!');
+                            alert('You lose this round!')
+                            computerScore++;
                         }else if (compChoice == 'scissors'){
-                            alert('You win this round!');
+                            alert('You win this round!')
+                            playerScore++;
                         }
                         break;
 
                     case 'paper':
                         if (compChoice == 'rock'){
-                            alert('You win this round!');
+                            alert('You win this round!')
+                            playerScore++;
                         }else if(compChoice == 'scissors'){
-                            alert('You lose this round!');
+                            alert('You lose this round!')
+                            computerScore++;
                         }
                         break;
 
                     case 'scissors':
                         if (compChoice == 'paper'){
-                            alert('You win this round!');
+                            alert('You win this round!')
+                            playerScore++;
                         }else if(compChoice == 'rock'){
-                            alert('You lose this round!');
+                            alert('You lose this round!')
+                            computerScore++;
                         }
                         break;
                 } 
