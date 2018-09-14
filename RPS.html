@@ -7,52 +7,65 @@
     <body>
         <script>
             
-            let playerSelection = prompt('Rock, Paper, or Scissors?')
+            
             let playerScore = 0 ;
             let computerScore = 0 ;
-            let finalScore = 'The computer has a score of ' + 
-                            computerScore + 
-                            ' and the player has a score of ' + 
-                            playerScore + 
-                            ' so far.';
+            let gameRounds = 0 ; 
+            let finalScore = 'computer Score is: ' + computerScore + 'Player score is: ' + playerScore ;
 
-            function gamePlay(){
-                alert( playRound(playerSelection,computerPlay() ) );
+            //Run this to play a game of 5 rounds. 
+            function gamePlay(){ 
+                for (; gameRounds < 5; ){
+                    let playerSelection = prompt('Rock, Paper, or Scissors?');
+                    alert( playRound(playerSelection,computerPlay() ) );
+                    if(gameRounds == 5){
+                        alert(computerScore , playerScore );
+                    }
+                }
             }
 
 
             //This is the game logic. 
             function playRound(playerSelection,computerSelection){
                 
-                if(playerSelection === computerSelection){return('Tie, play again!')}
+                if(playerSelection === computerSelection){
+                    ++gameRounds;
+                    return('Tie, play again!');
+                    }
 
                 switch(playerSelection.toLowerCase()){
                     case 'rock':
                         if(computerSelection == 'paper'){
-                            computerScore++;
+                            ++computerScore;
+                            ++gameRounds;
                             return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore); 
                         }else if(computerSelection == 'scissors'){
-                            playerScore++;
+                            ++playerScore;
+                            ++gameRounds;
                             return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
                     break;
 
                     case 'paper':
                         if(computerSelection == 'rock'){
-                            playerScore++;
+                            ++playerScore;
+                            ++gameRounds;
                             return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }else if(computerSelection == 'scissors'){
-                            computerScore++;
+                            ++computerScore;
+                            ++gameRounds;
                             return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
                     break;
 
                     case 'scissors':
                         if(computerSelection == 'paper'){
-                            playerScore++;
+                            ++playerScore;
+                            ++gameRounds;
                             return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }else if(computerSelection == 'rock'){
-                            computerScore++;
+                            ++computerScore;
+                            ++gameRounds;
                             return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
                     break;
