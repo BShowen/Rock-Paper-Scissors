@@ -10,15 +10,14 @@
             
             let playerScore = 0 ;
             let computerScore = 0 ;
-            let finalScore = 'computer Score is: ' + computerScore + 'Player score is: ' + playerScore ;
-
+        
             //Run this to play a game of 5 rounds. 
             function gamePlay(){ 
                 for (gameRounds = 1; gameRounds <= 5; gameRounds++ ){
                     let playerSelection = prompt('Rock, Paper, or Scissors?');
                     alert( playRound(playerSelection,computerPlay() ) );
                     if(gameRounds == 5){
-                        alert(finalScore);
+                    alert('GAME OVER! Computer score: ' + computerScore + 'Player score: ' + playerScore);
                     }
                 }
             }
