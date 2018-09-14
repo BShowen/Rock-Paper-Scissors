@@ -7,54 +7,55 @@
     <body>
         <script>
             
+            let playerSelection = prompt('Rock, Paper, or Scissors?')
+            let playerScore = 0 ;
+            let computerScore = 0 ;
+            let finalScore = 'The computer has a score of ' + 
+                            computerScore + 
+                            ' and the player has a score of ' + 
+                            playerScore + 
+                            ' so far.';
 
-    
-            let userChoice = prompt('Rock, Paper or Scissors?') ;
-            let playerScore = 0;
-            let computerScore = 0;
+            function gamePlay(){
+                alert( playRound(playerSelection,computerPlay() ) );
+            }
 
 
+            //This is the game logic. 
+            function playRound(playerSelection,computerSelection){
+                
+                if(playerSelection === computerSelection){return('Tie, play again!')}
 
-
-            //All functions placed below this comment for easy reading. 
-
-            //This is the function that needs to be executed to calculate the winner. 
-            gamePlay(userChoice,computerPlay() );
-            
-            //This function is the game logic. 
-            function gamePlay ( humanChoice , compChoice ){
-                if ( humanChoice === compChoice){ alert('Tie, play again!') }
-
-                switch( humanChoice.toLowerCase() ) {
+                switch(playerSelection.toLowerCase()){
                     case 'rock':
-                        if (compChoice == 'paper'){
-                            alert('You lose this round!')
+                        if(computerSelection == 'paper'){
                             computerScore++;
-                        }else if (compChoice == 'scissors'){
-                            alert('You win this round!')
+                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore); 
+                        }else if(computerSelection == 'scissors'){
                             playerScore++;
+                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
-                        break;
+                    break;
 
                     case 'paper':
-                        if (compChoice == 'rock'){
-                            alert('You win this round!')
+                        if(computerSelection == 'rock'){
                             playerScore++;
-                        }else if(compChoice == 'scissors'){
-                            alert('You lose this round!')
+                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                        }else if(computerSelection == 'scissors'){
                             computerScore++;
+                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
-                        break;
+                    break;
 
                     case 'scissors':
-                        if (compChoice == 'paper'){
-                            alert('You win this round!')
+                        if(computerSelection == 'paper'){
                             playerScore++;
-                        }else if(compChoice == 'rock'){
-                            alert('You lose this round!')
+                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                        }else if(computerSelection == 'rock'){
                             computerScore++;
+                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
                         }
-                        break;
+                    break;
                 } 
             }
 
@@ -62,15 +63,15 @@
             function computerPlay(){
                 let x = Math.random();
 
-                if (x<0.33){
-                    return 'rock';
+                if(x<0.33){
+                    comp = 'rock';
                 }else if(x < 0.66){
-                    return 'paper';
+                    comp = 'paper';
                 }else{
-                    return 'scissors';
+                    comp = 'scissors';
                 }
+                return comp;
             }
-            
         </script>
     </body>
 </html>
