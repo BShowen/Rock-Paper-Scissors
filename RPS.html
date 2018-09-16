@@ -5,9 +5,12 @@
         <meta charset="utf-8"/>
     </head>
     <body>
+        <p>This is Rock, Paper, Scissors.<p>
+        <p>Click the button to play a game of 5 rounds</p>
+        <button onclick="gamePlay()">Lets Play!</button>
+
         <script>
-            
-            
+
             let playerScore = 0 ;
             let computerScore = 0 ;
         
@@ -22,11 +25,10 @@
                 }
             }
 
-
             //This is the game logic. 
             function playRound(playerSelection,computerSelection){
                 
-                if(playerSelection === computerSelection){
+                if(playerSelection.toLowerCase() === computerSelection){
                     return('Tie, play again!');
                     }
 
@@ -34,30 +36,30 @@
                     case 'rock':
                         if(computerSelection == 'paper'){
                             ++computerScore;
-                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore); 
+                            return('You lose this round! \n Computer: ' + computerScore + ' \n Player: ' + playerScore); 
                         }else if(computerSelection == 'scissors'){
                             ++playerScore;
-                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                            return('You win this round! \n Computer: ' + computerScore + ' \n Player: ' + playerScore);
                         }
                     break;
 
                     case 'paper':
                         if(computerSelection == 'rock'){
                             ++playerScore;
-                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                            return('You win this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
                         }else if(computerSelection == 'scissors'){
                             ++computerScore;
-                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                            return('You lose this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
                         }
                     break;
 
                     case 'scissors':
                         if(computerSelection == 'paper'){
                             ++playerScore;
-                            return('You win this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                            return('You win this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
                         }else if(computerSelection == 'rock'){
                             ++computerScore;
-                            return('You lose this round! Computer score is: ' + computerScore + ' Player score is: ' + playerScore);
+                            return('You lose this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
                         }
                     break;
                 } 
