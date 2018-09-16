@@ -11,19 +11,19 @@
 
         <script>
 
-            let playerScore = 0 ;
-            let computerScore = 0 ;
-        
-            //Run this to play a game of 5 rounds. 
+            var playerScore = 0 ;
+            var computerScore = 0 ;
+            
             function gamePlay(){ 
-                for (gameRounds = 1; gameRounds <= 5; gameRounds++ ){
+                for ( ; (playerScore < 5 && computerScore < 5)  ;  ){
                     let playerSelection = prompt('Rock, Paper, or Scissors?');
-                    alert( playRound(playerSelection,computerPlay() ) );
-                    if(gameRounds == 5){
-                    alert('GAME OVER! Computer score: ' + computerScore + 'Player score: ' + playerScore);
+                        alert( playRound(playerSelection,computerPlay() ) );
+                    if(computerScore >= 5 || playerScore >= 5){
+                        alert('GAME OVER! \n Computer score: ' + computerScore + ' \n Player score: ' + playerScore);
                     }
                 }
             }
+            
 
             //This is the game logic. 
             function playRound(playerSelection,computerSelection){
