@@ -1,0 +1,59 @@
+*{ 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+header{
+    position: absolute;
+    width: 100%;
+}
+
+header h1{
+    width: 35%;
+    margin: 0 auto;
+}
+
+header h3{
+    width: 35%;
+    margin: 0 auto;
+}
+
+#choiceButtons{
+    position: absolute;
+    top: 12%;
+    width: 100%;
+}
+
+#btnWrapper{
+    width: 315px;
+    margin: 0 auto;
+}
+
+#choiceButtons .btn{
+    width: 100px;
+}
+
+#allResults{
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+#roundWinnerDisplay{
+    width: 15.6%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#playerScore{ 
+    position: absolute;
+    top: 0%;
+    left: 20%;
+}
+
+#computerScore{
+    position: absolute;
+    top: 0%;
+    left: 67.5%;
+}

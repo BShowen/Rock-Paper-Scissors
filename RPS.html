@@ -1,83 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
-        <title>Rock Papers Scissors</title>
-        <meta charset="utf-8"/>
+        <link href='./style.css' type='text/css' rel='stylesheet'>
+        <meta charset="UTF-8">
+        <title>Rock, Paper, Scissors</title>
     </head>
     <body>
-        <p>This is Rock, Paper, Scissors.<p>
-        <p>Click the button to play a game of 5 rounds</p>
-        <button onclick="gamePlay()">Lets Play!</button>
 
-        <script>
+        <header>
+            <h1>Rock, Paper, Scissors.</h1>
+            <h3>Win the game by scoring 5 points. Go!</h3>
+        </header>
 
-            var playerScore = 0 ;
-            var computerScore = 0 ;
+        <div id='choiceButtons'>
+            <div id="btnWrapper">
+                <input type='button' class='btn' id='rock' value='Rock'>
+                <input type='button' class='btn' id='paper' value='Paper'>
+                <input type='button' class='btn' id='scissors' value='Scissors'>
+            </div>
+        </div>
+
+        <div id='allResults'>
+            <div id='roundWinnerDisplay'></div>
             
-            function gamePlay(){ 
-                for ( ; (playerScore < 5 && computerScore < 5)  ;  ){
-                    let playerSelection = prompt('Rock, Paper, or Scissors?');
-                        alert( playRound(playerSelection,computerPlay() ) );
-                    if(computerScore >= 5 || playerScore >= 5){
-                        alert('GAME OVER! \n Computer score: ' + computerScore + ' \n Player score: ' + playerScore);
-                    }
-                }
-            }
+            <div id='computerScore'></div>
             
+            <div id='playerScore'></div>
+        </div>
 
-            //This is the game logic. 
-            function playRound(playerSelection,computerSelection){
-                
-                if(playerSelection.toLowerCase() === computerSelection){
-                    return('Tie, play again!');
-                    }
-
-                switch(playerSelection.toLowerCase()){
-                    case 'rock':
-                        if(computerSelection == 'paper'){
-                            ++computerScore;
-                            return('You lose this round! \n Computer: ' + computerScore + ' \n Player: ' + playerScore); 
-                        }else if(computerSelection == 'scissors'){
-                            ++playerScore;
-                            return('You win this round! \n Computer: ' + computerScore + ' \n Player: ' + playerScore);
-                        }
-                    break;
-
-                    case 'paper':
-                        if(computerSelection == 'rock'){
-                            ++playerScore;
-                            return('You win this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
-                        }else if(computerSelection == 'scissors'){
-                            ++computerScore;
-                            return('You lose this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
-                        }
-                    break;
-
-                    case 'scissors':
-                        if(computerSelection == 'paper'){
-                            ++playerScore;
-                            return('You win this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
-                        }else if(computerSelection == 'rock'){
-                            ++computerScore;
-                            return('You lose this round! \n Computer score is: ' + computerScore + ' \n Player score is: ' + playerScore);
-                        }
-                    break;
-                } 
-            }
-
-            //This is the computers play.
-            function computerPlay(){
-                let x = Math.random();
-
-                if(x<0.33){
-                    comp = 'rock';
-                }else if(x < 0.66){
-                    comp = 'paper';
-                }else{
-                    comp = 'scissors';
-                }
-                return comp;
-            }
-        </script>
+        <script type='text/javascript' src='Script.js'></script> 
     </body>
 </html>
