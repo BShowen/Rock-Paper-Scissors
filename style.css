@@ -26,12 +26,12 @@ header h3{
 }
 
 #btnWrapper{
-    width: 315px;
+    width: 24.6%;
     margin: 0 auto;
 }
 
 #choiceButtons .btn{
-    width: 100px;
+    width: 32%;
 }
 
 #allResults{
